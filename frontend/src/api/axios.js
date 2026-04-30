@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-const BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+// Get base URL and ensure no trailing slash
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080').replace(/\/$/, '');
 
 const api = axios.create({
-  baseURL: BASE + '/api',
+  baseURL: `${BASE_URL}/api`,
 });
 
 api.interceptors.request.use((config) => {
