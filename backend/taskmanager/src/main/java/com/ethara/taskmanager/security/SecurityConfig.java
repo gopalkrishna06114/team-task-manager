@@ -43,12 +43,10 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList(
-                "http://localhost:5173",
-                "http://localhost:3000",
-                "https://team-task-manager-smoky.vercel.app",
-                "https://team-task-manager-lu3kko5ta-gopal-krishnas-projects-a049aad8.vercel.app",
-                "https://team-task-manager-gopal-krishnas-projects-a049aad8.vercel.app"
+        config.setAllowedOriginPatterns(Arrays.asList(
+                "http://localhost:*",
+                "https://*.vercel.app",
+                "https://team-task-manager-smoky.vercel.app"
         ));
         config.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
         config.setAllowedHeaders(Arrays.asList("*"));
