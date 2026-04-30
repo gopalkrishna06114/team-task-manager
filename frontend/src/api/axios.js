@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-// Get base URL and ensure no trailing slash
-const BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080').replace(/\/$/, '');
-
 const api = axios.create({
-  baseURL: `${BASE_URL}/api`,
+  baseURL: 'https://team-task-manager-production-f27d.up.railway.app/api',
 });
 
 api.interceptors.request.use((config) => {
