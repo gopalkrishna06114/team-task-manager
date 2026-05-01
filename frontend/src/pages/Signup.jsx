@@ -14,7 +14,7 @@ export default function Signup() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await api.post('/api/auth/signup', form); // ✅ FIXED
+      const res = await api.post('/auth/signup', form); // ✅ FIXED - removed /api prefix
       login(res.data);
       toast.success('Account created!');
       navigate('/dashboard');
