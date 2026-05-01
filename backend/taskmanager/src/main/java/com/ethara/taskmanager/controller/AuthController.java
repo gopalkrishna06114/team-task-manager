@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "https://team-task-manager-smoky.vercel.app/")
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
